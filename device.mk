@@ -66,8 +66,8 @@ PRODUCT_PACKAGES += \
     libaudioroute.vendor
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc) \
-    $(LOCAL_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc) 
+#    $(LOCAL_PATH)/configs/audio/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration_7_0.xml \
@@ -79,6 +79,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
+
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 # Binder
 PRODUCT_PACKAGES += \
@@ -105,8 +107,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    libc29.vendor
+    android.hardware.camera.provider@2.4-service_64 
 
 PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
@@ -128,10 +129,9 @@ PRODUCT_COPY_FILES += \
 
 # MiuiCamera
 $(call soong_config_set,camera,package_name,com.android.camera)
-$(call soong_config_set,camera,override_format_from_reserved,true)
+$(call soong_config_set_bool,camera,override_format_from_reserved,true)
 TARGET_USES_MIUI_CAMERA := true
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicamera.xml
 
@@ -220,6 +220,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
+# Lineage Health
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/charging_enabled)
+
 # HIDL Transport
 PRODUCT_PACKAGES += \
     libhidltransport \
@@ -246,6 +250,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     init.power.rc
+
+PRODUCT_PACKAGES += \
+    libinit_cepheus
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -279,7 +286,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm
 
-$(call soong_config_set,livedisplay_sdm,enable_dm,false)
+$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
 # Logging
 SPAMMY_LOG_TAGS := \
@@ -385,10 +392,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
-
-# Parts
-PRODUCT_PACKAGES += \
-    XiaomiDolby
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -613,7 +616,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
-
-# Aperturerm
-PRODUCT_PACKAGES += \
-    ApertureStub

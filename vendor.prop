@@ -199,9 +199,6 @@ ro.hardware.fp.fod=true
 # Fastbootd
 ro.fastbootd.available=true
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_wallpaper_res_package" translatable="false">org.lineageos.backgrounds</string>
+    
+    <string name="config_wallpapers_array" translatable="false">partner_wallpapers</string>
+</resources>

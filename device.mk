@@ -611,6 +611,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     wifi-mac-generator
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    Backgrounds
+
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \

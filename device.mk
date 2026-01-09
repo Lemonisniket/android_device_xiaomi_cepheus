@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 $(call soong_config_set,camera,package_name,com.android.camera)
 $(call soong_config_set,camera,override_format_from_reserved,true)
 TARGET_USES_MIUI_CAMERA := true
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-cepheus/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicamera.xml
@@ -613,3 +613,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
+
+# Aperturerm
+PRODUCT_PACKAGES += \
+    ApertureStub

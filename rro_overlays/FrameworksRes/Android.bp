@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "CepheusFrameworksResOverlay",
+    theme: "CepheusFrameworksResOverlay",
+    certificate: "platform",
+    product_specific: true,
+}

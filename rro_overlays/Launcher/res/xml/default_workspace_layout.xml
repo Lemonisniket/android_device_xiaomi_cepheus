@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res-auto">
+
+    <favorite
+        launcher:packageName="com.google.android.dialer"
+        launcher:className="com.google.android.dialer.extensions.GoogleDialerSearchLauncher"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+
+    <favorite
+        launcher:packageName="com.google.android.apps.messaging"
+        launcher:className="com.google.android.apps.messaging.ui.ConversationListActivity"
+        launcher:container="-101"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="0" />
+
+    <favorite
+        launcher:packageName="com.android.chrome"
+        launcher:className="com.google.android.apps.chrome.Main"
+        launcher:container="-101"
+        launcher:screen="2"
+        launcher:x="2"
+        launcher:y="0" />
+
+    <favorite
+        launcher:packageName="com.android.camera"
+        launcher:className="com.android.camera.Camera"
+        launcher:container="-101"
+        launcher:screen="3"
+        launcher:x="3"
+        launcher:y="0" />
+
+    <favorite
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:className="com.google.android.googlequicksearchbox.SearchActivity"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="4" />
+
+    <favorite
+        launcher:packageName="com.google.android.contacts"
+        launcher:className="com.android.contacts.activities.PeopleActivity"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="4" />
+
+    <favorite
+        launcher:packageName="com.google.android.calculator"
+        launcher:className="com.android.calculator2.Calculator"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="4" />
+
+    <favorite
+        launcher:packageName="com.android.vending"
+        launcher:className="com.android.vending.AssetBrowserActivity"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="4" />
+
+</favorites>

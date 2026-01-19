@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "CepheusLauncherOverlay",
+    certificate: "platform",
+    product_specific: true,
+}

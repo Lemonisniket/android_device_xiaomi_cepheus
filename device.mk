@@ -390,7 +390,9 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay/frameworks/base/packages/overlays/NoCutoutOverlay
 
 PRODUCT_PACKAGES += \
-    NoCutoutOverlay
+    NoCutoutOverlay \
+    CepheusFrameworksResOverlay \
+    CepheusLauncherOverlay
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

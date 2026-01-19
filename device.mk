@@ -204,6 +204,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
+# Google prebuilts
+PRODUCT_PACKAGES += \
+    Photos \
+    GoogleDialer
+
 # GPS
 LOC_HIDL_VERSION := 4.0
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default

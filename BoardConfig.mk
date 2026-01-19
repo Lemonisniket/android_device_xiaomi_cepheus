@@ -105,8 +105,9 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := cepheus_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cepheus
-TARGET_KERNEL_CLANG_VERSION := r536225
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r536225/bin
+TARGET_KERNEL_CLANG_VERSION := r584948
+TARGET_KERNEL_ADDITIONAL_FLAGS := KCFLAGS="-O2 -march=armv8.2-a+dotprod -mcpu=cortex-a76+crypto"
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r584948/bin
 KERNEL_SUPPORTS_LLD := true
 KERNEL_SUPPORTS_LLVM_TOOLS := true
 
